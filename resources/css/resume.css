@@ -1,0 +1,81 @@
+body {
+  background-color: var(--bg-body);
+  color: var(--color-font-dark);
+  height: 100%;
+}
+
+main {
+  padding: 0.5em;
+  display: flex;
+}
+
+/* Title Resume */
+
+.resume-header {
+  text-align: center;
+  padding: 1em 0 1em 0;
+}
+
+.resume-header h1 {
+  font-size: var(--font-size-title);
+  font-family: var(--font-title);
+}
+
+/* Personal Information Section */
+.personal-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+  background-color: var(--accent-moss);
+  border-radius: 7px;
+  padding: 1.5em;
+}
+
+.download,
+.mail,
+.phone,
+.github,
+.website {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-bottom: 0.7em;
+}
+
+.website:last-child {
+  padding-bottom: 0;
+}
+
+.download a,
+.mail a,
+.github a,
+.website a {
+  text-decoration: none;
+}
+
+.download a,
+.download svg path,
+.mail a,
+.mail svg path,
+.phone p,
+.phone svg path,
+.github a,
+.github svg path,
+.website a,
+.website svg path {
+  color: var(--font-color-light);
+}
+
+/* Work Experience Section */
+.work-experience {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 3;
+}
+
+.work-experience h1 {
+  font-size: var(--font-size-subtitle);
+  font-family: var(--font-title);
+}
