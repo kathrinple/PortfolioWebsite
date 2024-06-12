@@ -1,0 +1,107 @@
+:root {
+  --bg-header-footer: #ded2cd; /* -Orchid */
+  --bg-body: #f4f4f4; /* Pearl */
+
+  --font-color-dark: #4d4a56; /* Noir */
+  --font-color-light: #f4f4f4; /* Pearl */
+  --font-color-orchid: #ded2cd; /* -Orchid */
+
+  --button-color: #988193; /* -Lavender */
+
+  --accent-lavender: #988193; /* -Lavender */
+  --accent-moss: #aaa48b; /* -Moss */
+
+  /* Fonts */
+  --font-title: "Playfair Display", serif;
+  --font-text: "Quicksand", sans-serif;
+
+  /* Font Sizes */
+  --font-size-title: 3rem;
+  --font-size-navbar: 1.2rem;
+  --font-size-text: 1.2rem;
+  --font-size-button: 1.5rem;
+}
+
+/* Styles on every page */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-text);
+  font-size: var(--font-size-text);
+  color: var(--font-color-dark);
+}
+
+html {
+  height: 100%;
+}
+
+header,
+footer {
+  background-color: var(--bg-header-footer);
+  color: var(--font-color-dark);
+  width: 100%;
+}
+
+/* Navbar */
+nav {
+  display: flex;
+  position: relative;
+  padding-left: 50%;
+}
+
+.navbar-element {
+  font-size: var(--font-size-navbar);
+  color: var(--font-color-dark);
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  z-index: 3;
+  min-width: 33.33%;
+  line-height: 60px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.underline {
+  position: absolute;
+  z-index: 2;
+  bottom: 0;
+  height: 6px;
+  width: 16.67%;
+  background: var(--accent-lavender);
+  transition: 0.35s;
+}
+
+.navbar-element:nth-child(1):hover ~ .underline {
+  translate: 0;
+}
+
+.navbar-element:nth-child(2):hover ~ .underline {
+  translate: 100% 0;
+}
+
+.navbar-element:nth-child(3):hover ~ .underline {
+  translate: 200% 0;
+}
+
+/* Footer */
+footer {
+  margin-top: 1em;
+}
+.contacts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 0.4em;
+}
+
+.contact-img {
+  padding: 0 0.5em 0 0.5em;
+  fill: var(--font-color-dark);
+}
+
+footer p {
+  text-align: center;
+  padding-bottom: 0.5em;
+}

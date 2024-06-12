@@ -1,0 +1,72 @@
+body {
+  background-color: var(--bg-body);
+  color: var(--color-font-dark);
+  height: 100%;
+  display: grid;
+  place-items: center;
+  grid-template-rows: auto 1fr auto;
+}
+
+main {
+  display: grid;
+  place-items: center;
+  grid-template-columns: 50% 50%;
+  padding: 0 0.5em 0 0.5em;
+}
+
+.main-image-left img {
+  width: 100%;
+  height: auto;
+}
+
+.main-text-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-text-right h1 {
+  font-size: var(--font-size-title);
+  font-family: var(--font-title);
+  padding: 0.5em;
+}
+
+.main-text-right p {
+  line-height: 1.5em;
+  text-align: center;
+  padding: 0.5em;
+}
+
+/* Button */
+.button-resume {
+  background-color: var(--button-color);
+  color: var(--font-color-light);
+  font-size: var(--font-size-button);
+  font-family: var(--font-title);
+  font-weight: 800;
+  padding: 0.5em 1.5em;
+  border: 2px solid var(--accent-lavender);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.35s;
+  margin-top: 1.5em;
+}
+
+.button-resume a {
+  text-decoration: none;
+  color: var(--font-color-light);
+}
+
+.button-resume:hover {
+  background-color: var(--font-color-orchid);
+  border: 2px solid var(--font-color-orchid);
+}
+
+.button-resume:hover a {
+  color: var(--button-color);
+}
+
+/* TODO */
+@media screen and (min-width: 320px) and (max-width: 499px) {
+}
