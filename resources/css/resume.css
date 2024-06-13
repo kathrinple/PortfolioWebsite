@@ -35,7 +35,7 @@ main {
 
 .left-side hr {
   width: 100%;
-  border: 1px solid var(--font-color-dark);
+  border: 1px solid var(--font-color-light);
   margin: 1em 0;
 }
 
@@ -108,7 +108,8 @@ main {
 
 /* Work Experience Section */
 .work-experience h1,
-.education h1 {
+.education h1,
+.projects h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -121,7 +122,8 @@ main {
 /* Timeline */
 
 .work-experience ul,
-.education ul {
+.education ul,
+.projects ul {
   --col-gap: 2rem;
   --row-gap: 2rem;
   --line-w: 0.25rem;
@@ -136,7 +138,8 @@ main {
 
 /* line */
 .work-experience ul::before,
-.education ul::before {
+.education ul::before,
+.projects ul::before {
   content: "";
   grid-column: 1;
   grid-row: 1 / span 20;
@@ -147,13 +150,15 @@ main {
 /* columns */
 /* row gaps */
 .work-experience ul li:not(:last-child),
-.education ul li:not(:last-child) {
+.education ul li:not(:last-child),
+.projects ul li:not(:last-child) {
   margin-bottom: var(--row-gap);
 }
 
 /* card */
 .work-experience ul li,
-.education ul li {
+.education ul li,
+.projects ul li {
   grid-column: 2;
   --inlineP: 1.5rem;
   margin-inline: var(--inlineP);
@@ -164,7 +169,8 @@ main {
 
 /* date */
 .work-experience ul li .date,
-.education ul li .date {
+.education ul li .date,
+.projects ul li .date {
   --dateH: 3rem;
   height: var(--dateH);
   margin-inline: calc(var(--inlineP) * -1);
@@ -183,7 +189,8 @@ main {
 
 /* date flap */
 .work-experience ul li .date::before,
-.education ul li .date::before {
+.education ul li .date::before,
+.projects ul li .date::before {
   content: "";
   width: var(--inlineP);
   aspect-ratio: 1;
@@ -198,7 +205,8 @@ main {
 
 /* circle */
 .work-experience ul li .date::after,
-.education ul li .date::after {
+.education ul li .date::after,
+.projects ul li .date::after {
   content: "";
   position: absolute;
   width: 2rem;
@@ -216,24 +224,27 @@ main {
 .work-experience ul li .title,
 .work-experience ul li .descr,
 .education ul li .title,
-.education ul li .descr {
-  background: var(--bg-header-footer);
+.education ul li .descr,
+.projects ul li .title,
+.projects ul li .descr {
+  background-color: var(--bg-header-footer);
   position: relative;
   padding-inline: 1.5rem;
 }
 
 .work-experience ul li .title,
-.education ul li .title {
+.education ul li .title,
+.projects ul li .title {
   overflow: hidden;
-  padding-block-start: 1.5rem;
-  padding-block-end: 1rem;
+  padding-block: 1.5rem 1rem;
   font-family: var(--font-title);
   font-size: var(--font-size-button);
   font-weight: 600;
 }
 
 .work-experience ul li .descr,
-.education ul li .descr {
+.education ul li .descr,
+.projects ul li .descr {
   padding-block-end: 1.5rem;
 }
 
@@ -241,7 +252,9 @@ main {
 .work-experience ul li .title::before,
 .work-experience ul li .descr::before,
 .education ul li .title::before,
-.education ul li .descr::before {
+.education ul li .descr::before,
+.projects ul li .title::before,
+.projects ul li .descr::before {
   content: "";
   position: absolute;
   width: 90%;
@@ -254,53 +267,97 @@ main {
 }
 
 .work-experience ul li .title::before,
-.education ul li .title::before {
+.education ul li .title::before,
+.projects ul li .title::before {
   bottom: calc(100% + 0.125rem);
 }
 
 .work-experience ul li .descr::before,
-.education ul li .descr::before {
+.education ul li .descr::before,
+.projects ul li .descr::before {
   z-index: -1;
   bottom: 0.25rem;
 }
 
+/* Elements without description */
+.education ul li.no-descr::after,
+.projects ul li.no-descr::after {
+  content: "";
+  position: relative;
+  width: 90%;
+  height: 0.5rem;
+  background: rgba(0, 0, 0, 0.5);
+  left: 50%;
+  border-radius: 50%;
+  filter: blur(4px);
+  transform: translate(-50%, 50%);
+  bottom: calc(100% + 0.25rem);
+  z-index: -1;
+}
+
+/* Projects */
+.projects .title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.projects .title p {
+  font-family: var(--font-title);
+  font-size: var(--font-size-button);
+}
+
+.project-languages {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 @media (min-width: 1184px) {
   .work-experience ul,
-  .education ul {
+  .education ul,
+  .projects ul {
     grid-template-columns: 1fr var(--line-w) 1fr;
   }
   .work-experience ul::before,
-  .education ul::before {
+  .education ul::before,
+  .projects ul::before {
     grid-column: 2;
   }
   .work-experience ul li:nth-child(odd),
-  .education ul li:nth-child(odd) {
+  .education ul li:nth-child(odd),
+  .projects ul li:nth-child(odd) {
     grid-column: 1;
   }
   .work-experience ul li:nth-child(even),
-  .education ul li:nth-child(even) {
+  .education ul li:nth-child(even),
+  .projects ul li:nth-child(even) {
     grid-column: 3;
   }
 
   /* start second card */
   .work-experience ul li:nth-child(2),
-  .education ul li:nth-child(2) {
+  .education ul li:nth-child(2),
+  .projects ul li:nth-child(2) {
     grid-row: 2/4;
   }
 
   .work-experience ul li:nth-child(odd) .date::before,
-  .education ul li:nth-child(odd) .date::before {
+  .education ul li:nth-child(odd) .date::before,
+  .projects ul li:nth-child(odd) .date::before {
     clip-path: polygon(0 0, 100% 0, 100% 100%);
     left: 0;
   }
 
   .work-experience ul li:nth-child(odd) .date::after,
-  .education ul li:nth-child(odd) .date::after {
+  .education ul li:nth-child(odd) .date::after,
+  .projects ul li:nth-child(odd) .date::after {
     transform: translate(-50%, -50%);
     left: calc(100% + var(--col-gap) + var(--line-w) / 2);
   }
   .work-experience ul li:nth-child(odd) .date,
-  .education ul li:nth-child(odd) .date {
+  .education ul li:nth-child(odd) .date,
+  .projects ul li:nth-child(odd) .date {
     border-radius: 0 calc(var(--dateH) / 2) calc(var(--dateH) / 2) 0;
   }
 }
