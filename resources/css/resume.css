@@ -101,14 +101,206 @@ main {
 /* Right Side */
 .right-side {
   display: flex;
-  flex-direction: column;
   flex: 3;
-  align-items: center;
+  flex-direction: column;
   color: var(--font-color-dark);
 }
 
 /* Work Experience Section */
-.work-experience h1 {
+.work-experience h1,
+.education h1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   font-size: var(--font-size-subtitle);
   font-family: var(--font-title);
+  padding-top: 0.5em;
+  padding-bottom: 1em;
+}
+
+/* Timeline */
+
+.work-experience ul,
+.education ul {
+  --col-gap: 2rem;
+  --row-gap: 2rem;
+  --line-w: 0.25rem;
+  display: grid;
+  grid-template-columns: var(--line-w) 1fr;
+  grid-auto-columns: max-content;
+  column-gap: var(--col-gap);
+  list-style: none;
+  width: min(60rem, 90%);
+  margin-inline: auto;
+}
+
+/* line */
+.work-experience ul::before,
+.education ul::before {
+  content: "";
+  grid-column: 1;
+  grid-row: 1 / span 20;
+  background: var(--font-color-orchid);
+  border-radius: calc(var(--line-w) / 2);
+}
+
+/* columns */
+/* row gaps */
+.work-experience ul li:not(:last-child),
+.education ul li:not(:last-child) {
+  margin-bottom: var(--row-gap);
+}
+
+/* card */
+.work-experience ul li,
+.education ul li {
+  grid-column: 2;
+  --inlineP: 1.5rem;
+  margin-inline: var(--inlineP);
+  grid-row: span 2;
+  display: grid;
+  grid-template-rows: min-content min-content min-content;
+}
+
+/* date */
+.work-experience ul li .date,
+.education ul li .date {
+  --dateH: 3rem;
+  height: var(--dateH);
+  margin-inline: calc(var(--inlineP) * -1);
+
+  text-align: center;
+  background-color: var(--accent-lavender);
+  color: var(--font-color-light);
+  font-weight: 600;
+
+  display: grid;
+  place-content: center;
+  position: relative;
+
+  border-radius: calc(var(--dateH) / 2) 0 0 calc(var(--dateH) / 2);
+}
+
+/* date flap */
+.work-experience ul li .date::before,
+.education ul li .date::before {
+  content: "";
+  width: var(--inlineP);
+  aspect-ratio: 1;
+  background: var(--accent-lavender);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2) 100%, transparent);
+  position: absolute;
+  top: 100%;
+
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+  right: 0;
+}
+
+/* circle */
+.work-experience ul li .date::after,
+.education ul li .date::after {
+  content: "";
+  position: absolute;
+  width: 2rem;
+  aspect-ratio: 1;
+  border: 0.3rem solid var(--accent-lavender);
+  background-color: var(--bg-body);
+  border-radius: 50%;
+  top: 50%;
+
+  transform: translate(50%, -50%);
+  right: calc(100% + var(--col-gap) + var(--line-w) / 2);
+}
+
+/* title descr */
+.work-experience ul li .title,
+.work-experience ul li .descr,
+.education ul li .title,
+.education ul li .descr {
+  background: var(--bg-header-footer);
+  position: relative;
+  padding-inline: 1.5rem;
+}
+
+.work-experience ul li .title,
+.education ul li .title {
+  overflow: hidden;
+  padding-block-start: 1.5rem;
+  padding-block-end: 1rem;
+  font-family: var(--font-title);
+  font-size: var(--font-size-button);
+  font-weight: 600;
+}
+
+.work-experience ul li .descr,
+.education ul li .descr {
+  padding-block-end: 1.5rem;
+}
+
+/* shadows */
+.work-experience ul li .title::before,
+.work-experience ul li .descr::before,
+.education ul li .title::before,
+.education ul li .descr::before {
+  content: "";
+  position: absolute;
+  width: 90%;
+  height: 0.5rem;
+  background: rgba(0, 0, 0, 0.5);
+  left: 50%;
+  border-radius: 50%;
+  filter: blur(4px);
+  transform: translate(-50%, 50%);
+}
+
+.work-experience ul li .title::before,
+.education ul li .title::before {
+  bottom: calc(100% + 0.125rem);
+}
+
+.work-experience ul li .descr::before,
+.education ul li .descr::before {
+  z-index: -1;
+  bottom: 0.25rem;
+}
+
+@media (min-width: 1184px) {
+  .work-experience ul,
+  .education ul {
+    grid-template-columns: 1fr var(--line-w) 1fr;
+  }
+  .work-experience ul::before,
+  .education ul::before {
+    grid-column: 2;
+  }
+  .work-experience ul li:nth-child(odd),
+  .education ul li:nth-child(odd) {
+    grid-column: 1;
+  }
+  .work-experience ul li:nth-child(even),
+  .education ul li:nth-child(even) {
+    grid-column: 3;
+  }
+
+  /* start second card */
+  .work-experience ul li:nth-child(2),
+  .education ul li:nth-child(2) {
+    grid-row: 2/4;
+  }
+
+  .work-experience ul li:nth-child(odd) .date::before,
+  .education ul li:nth-child(odd) .date::before {
+    clip-path: polygon(0 0, 100% 0, 100% 100%);
+    left: 0;
+  }
+
+  .work-experience ul li:nth-child(odd) .date::after,
+  .education ul li:nth-child(odd) .date::after {
+    transform: translate(-50%, -50%);
+    left: calc(100% + var(--col-gap) + var(--line-w) / 2);
+  }
+  .work-experience ul li:nth-child(odd) .date,
+  .education ul li:nth-child(odd) .date {
+    border-radius: 0 calc(var(--dateH) / 2) calc(var(--dateH) / 2) 0;
+  }
 }
