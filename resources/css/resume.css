@@ -1,6 +1,6 @@
 body {
   background-color: var(--bg-body);
-  color: var(--color-font-dark);
+  color: var(--font-color-dark);
   height: 100%;
 }
 
@@ -21,15 +21,27 @@ main {
   font-family: var(--font-title);
 }
 
-/* Personal Information Section */
-.personal-info {
+/* Left Side */
+.left-side {
+  background-color: var(--accent-moss);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   flex: 1;
-  background-color: var(--accent-moss);
   border-radius: 7px;
   padding: 1.5em;
+  color: var(--font-color-light);
+}
+
+.left-side hr {
+  width: 100%;
+  border: 1px solid var(--font-color-dark);
+  margin: 1em 0;
+}
+
+/* Personal Information Section */
+.personal-info a {
+  color: var(--font-color-light);
 }
 
 .download,
@@ -54,27 +66,48 @@ main {
   text-decoration: none;
 }
 
-.download a,
-.download svg path,
-.mail a,
-.mail svg path,
-.phone p,
-.phone svg path,
-.github a,
-.github svg path,
-.website a,
-.website svg path {
-  color: var(--font-color-light);
+/* Skills */
+.skills h1 {
+  display: flex;
+  justify-content: center;
+  font-size: var(--font-size-subtitle);
+  font-family: var(--font-title);
+}
+
+.skills ul {
+  list-style-type: none;
+}
+
+.skills ul li {
+  display: flex;
+  flex-direction: row;
+}
+
+.skill-name {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-right: 4em;
+  font-weight: normal;
+}
+
+.skill-rank {
+  flex: 1;
+  display: flex;
+  font-size: var(--font-size-subtitle);
+}
+
+/* Right Side */
+.right-side {
+  display: flex;
+  flex-direction: column;
+  flex: 3;
+  align-items: center;
+  color: var(--font-color-dark);
 }
 
 /* Work Experience Section */
-.work-experience {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex: 3;
-}
-
 .work-experience h1 {
   font-size: var(--font-size-subtitle);
   font-family: var(--font-title);
