@@ -240,12 +240,19 @@ main {
   font-family: var(--font-title);
   font-size: var(--font-size-button);
   font-weight: 600;
+  text-align: center;
 }
 
 .work-experience ul li .descr,
 .education ul li .descr,
 .projects ul li .descr {
   padding-block-end: 1.5rem;
+}
+
+.work-experience ul li .descr p,
+.education ul li .descr p,
+.projects ul li .descr p {
+  padding-bottom: 0.5em;
 }
 
 /* shadows */
@@ -305,12 +312,15 @@ main {
 .projects .title p {
   font-family: var(--font-title);
   font-size: var(--font-size-button);
+  padding-right: 10px;
+  text-align: center;
+  flex-grow: 1;
 }
 
 .project-languages {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center;
+  align-items: flex-end;
 }
 
 @media (min-width: 1184px) {
