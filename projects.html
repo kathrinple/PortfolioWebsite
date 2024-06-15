@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Projekte</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="resources/css/styles.css" />
+    <link rel="stylesheet" href="resources/css/projects.css" />
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quicksand:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a class="navbar-element" href="index.html">Home</a>
+        <a class="navbar-element" href="#">Projekte</a>
+        <a class="navbar-element" href="contact.html">Kontakt</a>
+        <div class="underline"></div>
+      </nav>
+      <div class="projects-header">
+        <h1>Meine Projekte</h1>
+      </div>
+    </header>
+    <main>
+      <div class="projects-container">
+        <!-- * Images Filter Buttons Section -->
+        <!-- ! Code funktioniert nicht
+            <section class="filter-buttons">
+          <div class="buttons">
+            <button class="active" data-filter="all">Zeige all</button>
+            <button data-filter="frontend">Frontend</button>
+            <button data-filter="backend">Backend</button>
+            <button data-filter="database">Datenbanken</button>
+          </div>
+        </section>
+    -->
+
+        <!-- * Filterable Images / Cards Section -->
+        <div class="filterable-cards">
+          <!-- * 1st card -->
+          <div data-name="frontend" class="card">
+            <img
+              src="resources/images/placeholder.png"
+              alt="Placeholder Image"
+            />
+            <div class="card-body">
+              <h2 class="card-title">Portfolio Website</h2>
+            </div>
+          </div>
+          <!-- * 2nd card -->
+          <div data-name="database" class="card">
+            <img
+              src="resources/images/placeholder.png"
+              alt="Placeholder Image"
+            />
+            <div class="card-body">
+              <h2 class="card-title">Spotify Playlistverwaltung</h2>
+              <ul class="card-text">
+                <li>
+                  semesterübergreifendes Projekt des Moduls "Datenbanken 2"
+                </li>
+                <li>
+                  Datenbankentwurf und -implementierung,
+                  Performancetestdurchführen
+                </li>
+                <li>Verwendung von Oracle SQL Developer</li>
+                <li>Teamgröße: 3</li>
+              </ul>
+            </div>
+          </div>
+          <!-- * 3rd card -->
+          <div data-name="frontend" class="card">
+            <img
+              src="resources/images/placeholder.png"
+              alt="Placeholder Image"
+            />
+            <div class="card-body">
+              <h2 class="card-title">TeleTherapy</h2>
+              <ul class="card-text">
+                <li>
+                  Teamgröße: ca. 16; aufgeteilt in Frontend, Backend,
+                  Dokumentation
+                </li>
+                <li>von mir genutzte Sprachen: HTML, Node.js, React</li>
+              </ul>
+            </div>
+          </div>
+          <!-- * 4th card -->
+          <div data-name="database" class="card">
+            <img
+              src="resources/images/placeholder.png"
+              alt="Placeholder Image"
+            />
+            <div class="card-body">
+              <h2 class="card-title">Bettenverwaltung im Krankenhaus</h2>
+              <ul class="card-text">
+                <li>Datenbankentwurf, -implementierung und JDBC-Anbindung</li>
+                <li>Verwendung von mySQL Workbench</li>
+                <li>Teamgröße: 2</li>
+              </ul>
+            </div>
+          </div>
+          <!-- * 5th card -->
+          <div data-name="backend" class="card">
+            <img
+              src="resources/images/placeholder.png"
+              alt="Placeholder Image"
+            />
+            <div class="card-body">
+              <h2 class="card-title">Wunddokumentation mit FHIR</h2>
+              <ul class="card-text">
+                <li>von mir genutzte Sprachen: Java, JavaFX</li>
+                <li>Teamgröße: 5</li>
+              </ul>
+            </div>
+          </div>
+          <!-- * 6th card -->
+          <div data-name="frontend" class="card">
+            <img
+              src="resources/images/placeholder.png"
+              alt="Placeholder Image"
+            />
+            <div class="card-body">
+              <h2 class="card-title">StudyPlanner</h2>
+              <ul class="card-text">
+                <li>genutzte Sprachen: HTML, CSS, Javascript</li>
+                <li>Teamgröße: 3</li>
+              </ul>
+            </div>
+          </div>
+          <!-- * 7th card -->
+          <div data-name="backend" class="card">
+            <img
+              src="resources/images/placeholder.png"
+              alt="Placeholder Image"
+            />
+            <div class="card-body">
+              <h2 class="card-title">Pizza Delivery Service</h2>
+              <ul class="card-text">
+                <li>
+                  kleines Projekt mit der Aufgabe eine Anwendung für einen
+                  Pizza-Lieferservice zu schreiben
+                </li>
+                <li>genutzte Sprachen: Java</li>
+                <li>Teamgröße: 3</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="contacts">
+        <a href="mailto:kathrin.pleuger@icloud.com">
+          <svg
+            class="contact-img"
+            xmlns="http://www.w3.org/2000/svg"
+            width="40px"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="currentColor"
+              d="M4 20q-.825 0-1.413-.588T2 18V6q0-.825.588-1.413T4 4h16q.825 0 1.413.588T22 6v12q0 .825-.588 1.413T20 20H4Zm8-7l8-5V6l-8 5l-8-5v2l8 5Z"
+            />
+          </svg>
+        </a>
+        <a href="https://github.com/kathrinple" target="_blank">
+          <svg
+            class="contact-img"
+            xmlns="http://www.w3.org/2000/svg"
+            width="40px"
+            viewBox="0 0 432 416"
+          >
+            <path
+              fill="currentColor"
+              d="M213.5 0q88.5 0 151 62.5T427 213q0 70-41 125.5T281 416q-14 2-14-11v-58q0-27-15-40q44-5 70.5-27t26.5-77q0-34-22-58q11-26-2-57q-18-5-58 22q-26-7-54-7t-53 7q-18-12-32.5-17.5T107 88h-6q-12 31-2 57q-22 24-22 58q0 55 27 77t70 27q-11 10-13 29q-42 18-62-18q-12-20-33-22q-2 0-4.5.5t-5 3.5t8.5 9q14 7 23 31q1 2 2 4.5t6.5 9.5t13 10.5T130 371t30-2v36q0 13-14 11q-64-22-105-77.5T0 213q0-88 62.5-150.5T213.5 0z"
+            />
+          </svg>
+        </a>
+      </div>
+      <p>&copy; 2024 Kathrin</p>
+    </footer>
+  </body>
+</html>
