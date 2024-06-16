@@ -45,7 +45,6 @@ main {
 }
 
 .download,
-.mail,
 .phone,
 .github,
 .website {
@@ -60,7 +59,6 @@ main {
 }
 
 .download a,
-.mail a,
 .github a,
 .website a {
   text-decoration: none;
