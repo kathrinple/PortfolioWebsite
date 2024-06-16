@@ -24,10 +24,36 @@
         <div class="underline"></div>
       </nav>
       <div class="projects-header">
-        <h1>Kontakt Form</h1>
+        <h1>Kontaktier mich!</h1>
       </div>
       <main>
-        <div class="contact-form">Soon to be seen!</div>
+        <form action="https://formspree.io/f/mnqeewge" method="POST">
+          <input
+            type="text"
+            name="name"
+            placeholder="Name"
+            class="contact-input"
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            class="contact-input"
+          />
+          <input
+            type="text"
+            name="subject"
+            placeholder="Betreff"
+            class="contact-input"
+          />
+          <textarea
+            name="message"
+            placeholder="Deine Nachricht an mich"
+            class="contact-input"
+          ></textarea>
+          <!-- your other form fields go here -->
+          <input type="submit" value="Absenden" />
+        </form>
       </main>
       <footer>
         <div class="contacts">
