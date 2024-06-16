@@ -1,7 +1,6 @@
 body {
   background-color: var(--bg-body);
   color: var(--color-font-dark);
-  height: 100%;
   display: grid;
   place-items: center;
   grid-template-rows: auto 1fr auto;
@@ -20,8 +19,14 @@ footer {
   width: 100%;
 }
 
+.main-image-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .main-image-left img {
-  width: 100%;
+  width: 85%;
   height: auto;
 }
 
